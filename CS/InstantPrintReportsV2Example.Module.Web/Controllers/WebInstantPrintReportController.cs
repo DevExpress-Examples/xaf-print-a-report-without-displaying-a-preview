@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web;
 using InstantPrintReportsV2Example.Module.Controllers;
 using DevExpress.ExpressApp.ReportsV2;
 using DevExpress.ExpressApp.Web;
@@ -14,6 +15,8 @@ namespace InstantPrintReportsV2Example.Module.Web {
                 "InstantPrintReport", GetPrintingScript(reportContainerHandle), overwrite: true);
         }
         private string GetPrintingScript(string reportContainerHandle) {
+            var url = HttpContext.Current.Response.ApplyAppPathModifier(
+                string.Format("~/InstantPrintReport.aspx?reportContainerHandle={0}", reportContainerHandle));
             return string.Format(@"
             if(!ASPx.Browser.Edge) {{
                 var iframe = document.getElementById('reportout');
@@ -26,11 +29,11 @@ namespace InstantPrintReportsV2Example.Module.Web {
                 iframe.style.height = 0;
                 iframe.style.border = 0;
                 document.body.appendChild(iframe);
-                document.getElementById('reportout').contentWindow.location = 'InstantPrintReport.aspx?reportContainerHandle={0}';
+                document.getElementById('reportout').contentWindow.location = '{0}';
             }} else {{
-                window.open('InstantPrintReport.aspx?reportContainerHandle={0}', '_blank');
+                window.open('{0}', '_blank');
             }}
-            ", reportContainerHandle);
+            ", url);
         }
     }
 }
