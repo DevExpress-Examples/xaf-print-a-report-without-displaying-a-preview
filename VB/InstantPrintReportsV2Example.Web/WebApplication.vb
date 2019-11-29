@@ -29,6 +29,10 @@ Namespace InstantPrintReportsV2Example.Web
             e.Updater.Update()
             e.Handled = True
         End Sub
+		
+		Protected Overrides Function CreateViewUrlManager() As IViewUrlManager
+            Return New ViewUrlManager()
+        End Function
 
         Private Sub InitializeComponent()
             Me.module1 = New DevExpress.ExpressApp.SystemModule.SystemModule()

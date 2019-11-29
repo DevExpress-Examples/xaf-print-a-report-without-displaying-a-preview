@@ -20,6 +20,7 @@ Namespace InstantPrintReportsV2Example.Web
         End Sub
         Protected Sub Application_Start(ByVal sender As Object, ByVal e As EventArgs)
             AddHandler ASPxWebControl.CallbackError, AddressOf Application_Error
+			System.Web.Routing.RouteTable.Routes.RegisterXafRoutes()
         End Sub
         Protected Sub Session_Start(ByVal sender As Object, ByVal e As EventArgs)
             WebApplication.SetInstance(Session, New InstantPrintReportsV2ExampleAspNetApplication())

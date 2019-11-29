@@ -18,6 +18,7 @@ namespace InstantPrintReportsV2Example.Web {
         }
         protected void Application_Start(Object sender, EventArgs e) {
             ASPxWebControl.CallbackError += new EventHandler(Application_Error);
+			System.Web.Routing.RouteTable.Routes.RegisterXafRoutes();
         }
         protected void Session_Start(Object sender, EventArgs e) {
             WebApplication.SetInstance(Session, new InstantPrintReportsV2ExampleAspNetApplication());

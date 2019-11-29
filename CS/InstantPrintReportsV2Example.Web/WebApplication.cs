@@ -15,7 +15,11 @@ namespace InstantPrintReportsV2Example.Web {
         private DevExpress.ExpressApp.ReportsV2.ReportsModuleV2 reportsModuleV21;
         private DevExpress.ExpressApp.ReportsV2.Web.ReportsAspNetModuleV2 reportsAspNetModuleV21;
         private InstantPrintReportsV2Example.Module.Web.InstantPrintReportsV2ExampleAspNetModule module4;
-
+       
+   	    protected override IViewUrlManager CreateViewUrlManager() {
+            return new ViewUrlManager();
+        }
+		
         public InstantPrintReportsV2ExampleAspNetApplication() {
             InitializeComponent();
         }
