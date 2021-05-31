@@ -1,5 +1,9 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstantPrintReportsV2Example.Win", "InstantPrintReportsV2Example.Win\InstantPrintReportsV2Example.Win.csproj", "{3098A9DB-88C1-4978-A477-3A16975CA6D9}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstantPrintReportsV2Example.Module", "InstantPrintReportsV2Example.Module\InstantPrintReportsV2Example.Module.csproj", "{F522E8FD-CA73-41A1-A3A8-7DDC05C09763}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstantPrintReportsV2Example.Module.Web", "InstantPrintReportsV2Example.Module.Web\InstantPrintReportsV2Example.Module.Web.csproj", "{19E30FF8-6B0F-49DF-BAF1-E0A783F8843D}"
@@ -7,8 +11,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstantPrintReportsV2Example.Web", "InstantPrintReportsV2Example.Web\InstantPrintReportsV2Example.Web.csproj", "{95F298F7-81C9-40CD-BCA0-4ACF0C80360A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstantPrintReportsV2Example.Module.Win", "InstantPrintReportsV2Example.Module.Win\InstantPrintReportsV2Example.Module.Win.csproj", "{B97DC66B-4939-4419-8D2B-F07F06D0F822}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstantPrintReportsV2Example.Win", "InstantPrintReportsV2Example.Win\InstantPrintReportsV2Example.Win.csproj", "{3098A9DB-88C1-4978-A477-3A16975CA6D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -19,7 +19,8 @@ Namespace InstantPrintReportsV2Example.Web
             InitializeComponent()
         End Sub
         Protected Sub Application_Start(ByVal sender As Object, ByVal e As EventArgs)
-            AddHandler ASPxWebControl.CallbackError, AddressOf Application_Error
+                        DevExpress.ExpressApp.FrameworkSettings.DefaultSettingsCompatibilityMode = DevExpress.ExpressApp.FrameworkSettingsCompatibilityMode.v20_1
+AddHandler ASPxWebControl.CallbackError, AddressOf Application_Error
 			System.Web.Routing.RouteTable.Routes.RegisterXafRoutes()
         End Sub
         Protected Sub Session_Start(ByVal sender As Object, ByVal e As EventArgs)

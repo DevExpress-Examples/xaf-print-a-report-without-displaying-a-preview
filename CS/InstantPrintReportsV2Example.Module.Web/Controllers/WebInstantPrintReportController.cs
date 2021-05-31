@@ -29,6 +29,11 @@ namespace InstantPrintReportsV2Example.Module.Web {
                 iframe.style.height = 0;
                 iframe.style.border = 0;
                 document.body.appendChild(iframe);
+                iframe.addEventListener('load', function(e) {{
+                    if(iframe.contentDocument.contentType !== 'text/html') {{
+                        iframe.contentWindow.print();
+                    }}
+                }});
                 document.getElementById('reportout').contentWindow.location = '{0}';
             }} else {{
                 window.open('{0}', '_blank');

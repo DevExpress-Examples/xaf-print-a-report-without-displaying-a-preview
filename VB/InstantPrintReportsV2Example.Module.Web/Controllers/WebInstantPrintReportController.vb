@@ -30,6 +30,11 @@ Namespace InstantPrintReportsV2Example.Module.Web
 "                iframe.style.height = 0;" & ControlChars.CrLf & _
 "                iframe.style.border = 0;" & ControlChars.CrLf & _
 "                document.body.appendChild(iframe);" & ControlChars.CrLf & _
+"                iframe.addEventListener('load', function(e) {{" & ControlChars.CrLf & _
+"                    if(iframe.contentDocument.contentType !== 'text/html') {{" & ControlChars.CrLf & _
+"                        iframe.contentWindow.print();" & ControlChars.CrLf & _
+"                    }}" & ControlChars.CrLf & _
+"                }});" & ControlChars.CrLf & _
 "                document.getElementById('reportout').contentWindow.location = '{0}';" & ControlChars.CrLf & _
 "            }} else {{" & ControlChars.CrLf & _
 "                window.open('{0}', '_blank');" & ControlChars.CrLf & _

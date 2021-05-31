@@ -20,7 +20,8 @@ Namespace InstantPrintReportsV2Example.Win
         ''' </summary>
         <STAThread> _
         Shared Sub Main()
-            Application.EnableVisualStyles()
+                        DevExpress.ExpressApp.FrameworkSettings.DefaultSettingsCompatibilityMode = DevExpress.ExpressApp.FrameworkSettingsCompatibilityMode.v20_1
+Application.EnableVisualStyles()
             Application.SetCompatibleTextRenderingDefault(False)
             EditModelPermission.AlwaysGranted = System.Diagnostics.Debugger.IsAttached
             Dim winApplication As New InstantPrintReportsV2ExampleWindowsFormsApplication()

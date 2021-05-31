@@ -31,7 +31,6 @@ Namespace InstantPrintReportsV2Example.Web
                         ms.Seek(0, SeekOrigin.Begin)
                         Dim reportContent() As Byte = ms.ToArray()
                         Response.ContentType = "application/pdf"
-						Response.AddHeader("Content-Disposition", "attachment; filename=MyFileName.pdf")
                         Response.Clear()
                         Response.OutputStream.Write(reportContent, 0, reportContent.Length)
                         Response.End()
