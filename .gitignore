@@ -21,7 +21,9 @@ x64/
 x86/
 bld/
 [Oo]bj/
+[Bb]in/
 [Ll]og/
+licenses.licx
 
 # Visual Studio 2015 cache/options directory
 .vs/
