@@ -15,5 +15,5 @@
 <p>This example demonstrates how to implement the <strong>InstantPrintReport</strong> Action that prints the current report without displaying its preview. The complete description is available in the <a href="https://documentation.devexpress.com/#Xaf/CustomDocument3601"><u>How to: Print a Report Without Displaying a Preview (in Reports V2)</u></a> topic.</p>
 <p>You can also use the code from this example to access an <a href="https://documentation.devexpress.com/#XtraReports/clsDevExpressXtraReportsUIXtraReporttopic"><u>XtraReport</u></a> object and then export or email a report content according to tutorials listed in the <a href="https://documentation.devexpress.com/#XtraReports/CustomDocument15796"><u>Export a Report</u></a> document.</p>
 
-![image](https://user-images.githubusercontent.com/14300209/233358130-0d1ef20f-f44b-4539-a140-4857c2090ec7.png)
+![image](https://user-images.githubusercontent.com/14300209/233358203-9518bb1a-cfc7-4a1a-8512-e3d3bd5d60f6.png)
 
