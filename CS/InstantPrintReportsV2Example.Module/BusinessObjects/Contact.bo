@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Application>
-  <BOModel>
-    <Class Name="InstantPrintReportsV2Example.Module.BusinessObjects.Contact" IsDesigned="True" />
-  </BOModel>
-</Application>
