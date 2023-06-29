@@ -3,12 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstantReportEF.Blazor.Server", "InstantReportEF.Blazor.Server\InstantReportEF.Blazor.Server.csproj", "{C9F5AF2B-A51E-41E8-B4CE-21909F445359}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstantReportEF.Module", "InstantReportEF.Module\InstantReportEF.Module.csproj", "{1E0181F7-5916-4C75-B610-15E62D58A093}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstantReportEF.Win", "InstantReportEF.Win\InstantReportEF.Win.csproj", "{713DA3AB-7075-435D-81C1-C8CCE0DDF8B1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstantReportEF.Blazor.Server", "InstantReportEF.Blazor.Server\InstantReportEF.Blazor.Server.csproj", "{C9F5AF2B-A51E-41E8-B4CE-21909F445359}"
-EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
