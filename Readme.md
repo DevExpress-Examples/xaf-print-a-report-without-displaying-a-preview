@@ -6,7 +6,7 @@
 
 # How to: Print a report without displaying a preview
 
-This example demonstrates how to implement an Action that prints a specific report without displaying its preview. The complete description is available in the  [How to: Print a Report Without Displaying a Preview (in Reports V2)](https://documentation.devexpress.com/#Xaf/CustomDocument3601) topic.
+This example demonstrates how to implement an Action that prints a specific report without displaying its preview. The printed report uses custom sorting and includes only the items selected in the List View. The complete description is available in the [How to: Print a Report Without Displaying a Preview (in Reports V2)](https://documentation.devexpress.com/#Xaf/CustomDocument3601) topic.
 
 You can also use the code from this example to access an [XtraReport](https://documentation.devexpress.com/#XtraReports/clsDevExpressXtraReportsUIXtraReporttopic) object and then export or email a report content according to tutorials listed in the [Export Reports](https://documentation.devexpress.com/#XtraReports/CustomDocument15796) topic.
 
@@ -17,3 +17,10 @@ You can also use the code from this example to access an [XtraReport](https://do
 * **[InstantPrintReportController.cs](./CS/EFCore/InstantReportEF/InstantReportEF.Module/Controllers/InstantPrintReportController.cs)**
 * [BlazorPrintContactsController.cs](./CS/EFCore/InstantReportEF/InstantReportEF.Blazor.Server/Controllers/BlazorPrintContactsController.cs) 
 * [WinInstantPrintReportController.cs](./CS/EFCore/InstantReportEF/InstantReportEF.Win/Controllers/WinInstantPrintReportController.cs) []
+
+## Documentation
+
+* [Reports V2 Module](https://docs.devexpress.com/eXpressAppFramework/113591/shape-export-print-data/reports/reports-v2-module-overview)
+* [How to: Print a Report Without Displaying a Preview (in Reports V2)](https://documentation.devexpress.com/#Xaf/CustomDocument3601)
+* [How to: Access Objects Selected in the Current View](https://docs.devexpress.com/eXpressAppFramework/113324/task-based-help/views/how-to-access-objects-selected-in-the-current-view)
+* [Data Sorting in Reports V2](https://docs.devexpress.com/eXpressAppFramework/113595/concepts/extra-modules/reports-v2/data-sorting-in-reports-v2)
