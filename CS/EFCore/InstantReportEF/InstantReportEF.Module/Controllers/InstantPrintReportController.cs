@@ -26,7 +26,7 @@ namespace InstantPrintReportsV2Example.Module.Controllers {
                 if (reportData == null) {
                     throw new UserFriendlyException("Cannot find the 'Contacts Report' report.");
                 } else {
-                    PrintReport(reportData);
+                    PrintReport(reportData, e.SelectedObjects);
                 }
             };
         }
@@ -35,6 +35,6 @@ namespace InstantPrintReportsV2Example.Module.Controllers {
             reportExportService.SetupReport(report);
             return report;
         }
-        protected abstract void PrintReport(IReportDataV2 reportData);
+        protected abstract void PrintReport(IReportDataV2 reportData, System.Collections.IList selectedObjects);
     }
 }
