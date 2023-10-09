@@ -6,25 +6,25 @@ using DevExpress.XtraReports.UI;
 using InstantPrintReportsV2Example.Module.Controllers;
 using Microsoft.Extensions.DependencyInjection;
 using DevExpress.Xpo.DB;
+using DevExpress.Persistent.BaseImpl;
 
 namespace InstantPrintReportsV2Example.Module.Win {
     public class WinInstantPrintReportController : PrintContactsController {
+        readonly IReportExportService reportExportService;
         public WinInstantPrintReportController() : base() { }
 
         [ActivatorUtilitiesConstructor]
-        public WinInstantPrintReportController(IServiceProvider serviceProvider) : base(serviceProvider) { }
+        public WinInstantPrintReportController(IServiceProvider serviceProvider) : base() {
+            reportExportService = serviceProvider.GetService<IReportExportService>();
+        }
 
-        protected override void PrintReport(IReportDataV2 reportData, System.Collections.IList selectedObjects) {
-            using var report = LoadReport(reportData);
-            ReportsModuleV2 reportsModule = ReportsModuleV2.FindReportsModule(Application.Modules);
-            if (reportsModule != null && reportsModule.ReportsDataSourceHelper != null) {
-                // Apply filtering and sorting to the report data.
-                CriteriaOperator objectsCriteria = ((BaseObjectSpace)ObjectSpace).GetObjectsCriteria(((ObjectView)View).ObjectTypeInfo, selectedObjects);
-                SortProperty[] sortProperties = { new SortProperty("Age", SortingDirection.Descending) };
-                reportsModule.ReportsDataSourceHelper.SetupBeforePrint(report, null, objectsCriteria, true, sortProperties, true);
-
-                report.PrintDialog();
-            }
+        protected override void PrintReport(string reportDisplayName, System.Collections.IList selectedObjects) {
+            using XtraReport report = reportExportService.LoadReport<ReportDataV2>(r => r.DisplayName == reportDisplayName);
+            // Filter and sort report data.
+            CriteriaOperator objectsCriteria = ((BaseObjectSpace)ObjectSpace).GetObjectsCriteria(((ObjectView)View).ObjectTypeInfo, selectedObjects);
+            SortProperty[] sortProperties = { new SortProperty("Age", SortingDirection.Descending) };
+            reportExportService.SetupReport(report, objectsCriteria.ToString(), sortProperties);
+            report.PrintDialog();
         }
     }
 }

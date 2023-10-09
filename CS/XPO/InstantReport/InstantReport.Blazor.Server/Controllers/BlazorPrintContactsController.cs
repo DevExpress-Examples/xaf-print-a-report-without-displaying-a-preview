@@ -1,35 +1,36 @@
 ﻿using DevExpress.Data.Filtering;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.ReportsV2;
+using DevExpress.Persistent.BaseImpl;
 using DevExpress.Xpo;
 using DevExpress.Xpo.DB;
+using DevExpress.XtraReports.UI;
 using InstantPrintReportsV2Example.Module.Controllers;
 using Microsoft.JSInterop;
 
 namespace InstantReport.Blazor.Server.Controllers {
     public class BlazorPrintContactsController : PrintContactsController {
+        readonly IReportExportService reportExportService;
+        readonly IJSRuntime jsRuntime;
         public BlazorPrintContactsController() : base() { }
 
         [ActivatorUtilitiesConstructor]
-        public BlazorPrintContactsController(IServiceProvider serviceProvider) : base(serviceProvider) { }
+        public BlazorPrintContactsController(IServiceProvider serviceProvider) : base() {
+            reportExportService = serviceProvider.GetService<IReportExportService>();
+            jsRuntime = serviceProvider.GetService<IJSRuntime>();
+        }
 
-        protected override async void PrintReport(IReportDataV2 reportData, System.Collections.IList selectedObjects) {
-            IJSRuntime jsRuntime = Application.ServiceProvider.GetRequiredService<IJSRuntime>();
-            using var report = LoadReport(reportData);
-            ReportsModuleV2 reportsModule = ReportsModuleV2.FindReportsModule(Application.Modules);
-            if (reportsModule != null && reportsModule.ReportsDataSourceHelper != null) {
-                // Apply filtering and sorting to the report data.
-                CriteriaOperator objectsCriteria = ((BaseObjectSpace)ObjectSpace).GetObjectsCriteria(((ObjectView)View).ObjectTypeInfo, selectedObjects);
-                SortProperty[] sortProperties = { new SortProperty("Age", SortingDirection.Descending) };
-                reportsModule.ReportsDataSourceHelper.SetupBeforePrint(report, null, objectsCriteria, true, sortProperties, true);
+        protected override async void PrintReport(string reportDisplayName, System.Collections.IList selectedObjects) {
+            using XtraReport report = reportExportService.LoadReport<ReportDataV2>(r => r.DisplayName == reportDisplayName);
+            // Filter and sort report data
+            CriteriaOperator objectsCriteria = ((BaseObjectSpace)ObjectSpace).GetObjectsCriteria(((ObjectView)View).ObjectTypeInfo, selectedObjects);
+            SortProperty[] sortProperties = { new SortProperty("Age", SortingDirection.Descending) };
+            reportExportService.SetupReport(report, objectsCriteria.ToString(), sortProperties);
 
-                using MemoryStream ms = new MemoryStream();
-                await report.ExportToPdfAsync(ms);
-                ms.Position = 0;
-                using var streamRef = new DotNetStreamReference(ms);
-                var fileName = reportData.DisplayName + ".pdf";
-                await jsRuntime.InvokeVoidAsync("downloadFileFromStream", fileName, streamRef);
-            }
+            using Stream s = reportExportService.ExportReport(report, DevExpress.XtraPrinting.ExportTarget.Pdf);
+            using var streamRef = new DotNetStreamReference(s);
+            var fileName = reportDisplayName + ".pdf";
+            await jsRuntime.InvokeVoidAsync("downloadFileFromStream", fileName, streamRef);
         }
     }
 }
