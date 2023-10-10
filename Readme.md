@@ -4,7 +4,7 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 
-# How to: Print a report without displaying a preview
+# XAF - How to Print a report without displaying a preview
 
 This example demonstrates how to implement an Action that prints a specific report without displaying its preview. The printed report uses custom sorting and includes only the items selected in the List View. The complete description is available in the [How to: Print a Report Without Displaying a Preview (in Reports V2)](https://documentation.devexpress.com/#Xaf/CustomDocument3601) topic.
 
