@@ -14,7 +14,7 @@
 <!-- default file list end -->
 # How to: Print a report without displaying a preview
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/e5146/)**
+**[[Run Online]](https://codecentral.devexpress.com/128592402/)**
 <!-- run online end -->
 
 
