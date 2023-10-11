@@ -1,19 +1,38 @@
-﻿using DevExpress.ExpressApp.ReportsV2;
-using DevExpress.XtraPrinting;
+﻿using DevExpress.Data.Filtering;
+using DevExpress.Data.Helpers;
+using DevExpress.ExpressApp;
+using DevExpress.ExpressApp.ReportsV2;
+using DevExpress.Persistent.BaseImpl.EF;
+using DevExpress.Xpo;
+using DevExpress.XtraReports.UI;
 using InstantPrintReportsV2Example.Module.Controllers;
+using Microsoft.JSInterop;
+using DevExpress.Xpo.DB;
+using DevExpress.ReportServer.ServiceModel.DataContracts;
 
 namespace InstantReport.Blazor.Server.Controllers {
     public class BlazorPrintContactsController : PrintContactsController {
+        readonly IReportExportService reportExportService;
+        readonly IJSRuntime jsRuntime;
         public BlazorPrintContactsController() : base() { }
 
         [ActivatorUtilitiesConstructor]
-        public BlazorPrintContactsController(IServiceProvider serviceProvider) : base(serviceProvider) { }
+        public BlazorPrintContactsController(IServiceProvider serviceProvider) : base() {
+            reportExportService = serviceProvider.GetService<IReportExportService>();
+            jsRuntime = serviceProvider.GetService<IJSRuntime>();
+        }
 
-        protected override void PrintReport(IReportDataV2 reportData) {
-            using var report = LoadReport(reportData);
-            report.CreateDocument();
-            PrintToolBase tool = new PrintToolBase(report.PrintingSystem);
-            tool.Print();
+        protected override async void PrintReport(string reportDisplayName, System.Collections.IList selectedObjects) {
+            using XtraReport report = reportExportService.LoadReport<ReportDataV2>(r => r.DisplayName == reportDisplayName);
+            // Filter and sort report data
+            CriteriaOperator objectsCriteria = ((BaseObjectSpace)ObjectSpace).GetObjectsCriteria(((ObjectView)View).ObjectTypeInfo, selectedObjects);
+            SortProperty[] sortProperties = { new SortProperty("Age", SortingDirection.Descending) };
+            reportExportService.SetupReport(report, objectsCriteria.ToString(), sortProperties);
+
+            using Stream s = reportExportService.ExportReport(report, DevExpress.XtraPrinting.ExportTarget.Pdf);
+            using var streamRef = new DotNetStreamReference(s);
+            var fileName = reportDisplayName + ".pdf";
+            await jsRuntime.InvokeVoidAsync("downloadFileFromStream", fileName, streamRef);
         }
     }
 }
