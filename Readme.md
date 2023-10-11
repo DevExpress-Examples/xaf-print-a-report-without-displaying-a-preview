@@ -8,7 +8,7 @@
 
 This example demonstrates how to implement an Action that prints a specific report without displaying its preview. The printed report uses custom sorting and includes only the items selected in the List View. The complete description is available in the [How to: Print a Report Without Displaying a Preview (in Reports V2)](https://documentation.devexpress.com/#Xaf/CustomDocument3601) topic.
 
-You can also use the code from this example to access an [XtraReport](https://documentation.devexpress.com/#XtraReports/clsDevExpressXtraReportsUIXtraReporttopic) object and then export or email a report content according to tutorials listed in the [Export Reports](https://documentation.devexpress.com/#XtraReports/CustomDocument15796) topic.
+You can also use the code from this example to access an [XtraReport](https://documentation.devexpress.com/#XtraReports/clsDevExpressXtraReportsUIXtraReporttopic) object and then export or email report content according to tutorials listed in the [Export Reports](https://documentation.devexpress.com/#XtraReports/CustomDocument15796) topic.
 
 ![image](https://user-images.githubusercontent.com/14300209/233358203-9518bb1a-cfc7-4a1a-8512-e3d3bd5d60f6.png)
 
