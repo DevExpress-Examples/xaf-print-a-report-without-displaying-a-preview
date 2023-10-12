@@ -15,8 +15,9 @@ You can also use the code from this example to access an [XtraReport](https://do
 ## Files to Review:
 
 * **[InstantPrintReportController.cs](./CS/EFCore/InstantReportEF/InstantReportEF.Module/Controllers/InstantPrintReportController.cs)**
-* [BlazorPrintContactsController.cs](./CS/EFCore/InstantReportEF/InstantReportEF.Blazor.Server/Controllers/BlazorPrintContactsController.cs) 
-* [WinInstantPrintReportController.cs](./CS/EFCore/InstantReportEF/InstantReportEF.Win/Controllers/WinInstantPrintReportController.cs) []
+* [BlazorPrintContactsController.cs](./CS/EFCore/InstantReportEF/InstantReportEF.Blazor.Server/Controllers/BlazorPrintContactsController.cs)
+* [_Host.cshtml](./CS/EFCore/InstantReportEF/InstantReportEF.Blazor.Server/Pages/_Host.cshtml)
+* [WinInstantPrintReportController.cs](./CS/EFCore/InstantReportEF/InstantReportEF.Win/Controllers/WinInstantPrintReportController.cs)
 
 ## Documentation
 
