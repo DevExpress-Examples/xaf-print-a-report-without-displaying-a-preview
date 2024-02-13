@@ -13,9 +13,6 @@
 * [InstantPrintReport.aspx.cs](./CS/InstantPrintReportsV2Example.Web/InstantPrintReport.aspx.cs) (VB: [InstantPrintReport.aspx.vb](./VB/InstantPrintReportsV2Example.Web/InstantPrintReport.aspx.vb))
 <!-- default file list end -->
 # How to: Print a report without displaying a preview
-<!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/128592402/)**
-<!-- run online end -->
 
 
 <p>This example demonstrates how to implement the <strong>InstantPrintReport</strong> Action that prints the current report without displaying its preview. The complete description is available in the <a href="https://documentation.devexpress.com/#Xaf/CustomDocument3601"><u>How to: Print a Report Without Displaying a Preview (in Reports V2)</u></a> topic.</p>
