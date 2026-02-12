@@ -19,7 +19,7 @@
 ![image](https://user-images.githubusercontent.com/14300209/233358203-9518bb1a-cfc7-4a1a-8512-e3d3bd5d60f6.png)
 
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=xaf-print-a-report-without-displaying-a-preview&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=xaf-print-a-report-without-displaying-a-preview&~~~was_helpful=no)
 
