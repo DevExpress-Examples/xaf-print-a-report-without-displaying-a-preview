@@ -27,7 +27,7 @@ You can also use the code from this example to access an [XtraReport](https://do
 * [How to: Access Objects Selected in the Current View](https://docs.devexpress.com/eXpressAppFramework/113324/task-based-help/views/how-to-access-objects-selected-in-the-current-view)
 * [Data Sorting in Reports V2](https://docs.devexpress.com/eXpressAppFramework/113595/concepts/extra-modules/reports-v2/data-sorting-in-reports-v2)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=xaf-print-a-report-without-displaying-a-preview&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=xaf-print-a-report-without-displaying-a-preview&~~~was_helpful=no)
 
