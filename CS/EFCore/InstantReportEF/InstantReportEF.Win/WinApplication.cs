@@ -18,7 +18,6 @@ public class InstantReportEFWindowsFormsApplication : WinApplication {
 		SplashScreen = new DXSplashScreen(typeof(XafSplashScreen), new DefaultOverlayFormOptions());
         ApplicationName = "InstantReportEF";
         CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema;
-        UseOldTemplates = false;
         DatabaseVersionMismatch += InstantReportEFWindowsFormsApplication_DatabaseVersionMismatch;
         CustomizeLanguagesList += InstantReportEFWindowsFormsApplication_CustomizeLanguagesList;
     }
